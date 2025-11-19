@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button Larger on click </title>
+    <style>
+        body {
+  display: flex;
+    justify-content: center;
+  align-items: center;
+  height: 100vh;
+        }
+.smallBox{
+    width: 100px;
+    border-radius: 10%;
+    height: 100px;
+    background-color: blue;
+  }
+.largeBox{
+   width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: brown;
+  }
+
+    </style>
+</head>
+<body>
+    <script>
+        const body=document.querySelector("body");
+        const box=document.createElement("div");
+        const button=document.createElement("button");
+        button.textContent="Click Me!";
+        body.appendChild(box);
+        body.appendChild(button);
+        // box.style.height="200px";
+        // box.style.width="200px";
+        // box.style.backgroundColor="red";
+
+        box.classList.add("smallBox");
+
+
+        // event handling
+        let size=true;
+        button.addEventListener("click",function(){
+            if(size){
+                box.classList.toggle("largeBox");
+                box.classList.toggle("smallBox");
+            }else{
+                box.classList.add("smallBox");
+                box.classList.remove("largeBox");
+            }
+            
+        });
+    </script>
+</body>
+</html>
